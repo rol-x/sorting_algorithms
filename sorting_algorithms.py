@@ -11,13 +11,13 @@ class FileLoader():
     @staticmethod
     def load_num(filename, lines):
         """Return a list of given number of integers from a file."""
-        file = open(filename, 'r')
+        file = open('data/' + filename, 'r')
         return [int(line) for line in random.sample(file.readlines(), lines)]
 
     @staticmethod
     def load_str(filename, words):
         """Return a list of given number of words from a file."""
-        file = open(filename, 'r')
+        file = open('data/' + filename, 'r')
         return [word[:-1] for word in random.sample(file.readlines(), words)]
 
 
@@ -379,7 +379,7 @@ class Tester():
         return timetable
 
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     # Create an integer sorting tester...
     int_tester = Tester(int)
     # ...specify the testing data size...
@@ -388,7 +388,7 @@ if __name__ == "_main_":
     int_tester.perform_test('insertion sort')
     int_tester.perform_test('binary insertion sort')
     # Save results for later...
-    algorithm, performance_time = int_tester.perform_test('insertion sort')
+    algorithm, performance_time = int_tester.perform_test('selection sort')
     print(f'{algorithm}: {performance_time} seconds')
     # ...or let the code do all the work for you!
-    print(int_tester.summarize_performance('quick'))
+    print(int_tester.summarize_performance('all'))
